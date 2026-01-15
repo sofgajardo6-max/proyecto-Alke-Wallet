@@ -1,0 +1,51 @@
+    body {
+        padding: 0px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: rgb(127, 28, 207);
+    }
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    #AlkeWalleth1 {
+        color: #FFF;
+        margin: 0;
+        padding: 0;
+        justify-content:flex-start;
+        margin-left: 10px;
+        align-items: center;
+        display: flex;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        
+    }
+    #iconoBanco {
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+    }
+
+    #navAlke {
+        background-color: rgb(88, 24, 139);
+        color: #FFF;
+        margin-bottom: 30px;
+    }
+    #navAlke a {
+        color: #FFF;
+        display: flex;
+        align-items: center;
+    }
+    .texto-blanco {
+        color: #FFF;
+    }
+
+    .navbar-toggler {
+        border-color: #ffffff;
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    .navbar-toggler:hover {
+    background-color: rgb(105, 46, 199); /* O el color que quieras */
+    transition: 0.3s;
+}
