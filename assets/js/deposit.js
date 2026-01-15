@@ -7,13 +7,10 @@ document.getElementById('botonDepositar').addEventListener('click', function(eve
     let monto = document.getElementById('montoDeposito').value;
 
     if (monto === "" || monto <= 0) {
-        document.getElementById('mensajeAlerta').innerHTML = `
+        $('#mensajeAlerta').hide().html(`
             <div class="alert alert-danger text-center mx-auto" style="max-width:300px;">
                 ¡Ingresa un monto si quieres depositar!
-            </div>`;
-            setTimeout(function() {
-                document.getElementById('mensajeAlerta').innerHTML = ``;
-            }, 1200);
+            </div>`).fadeIn(300).delay(1500).fadeOut(500);
         return; 
     }
 
@@ -21,11 +18,11 @@ document.getElementById('botonDepositar').addEventListener('click', function(eve
     let resultado = Number(saldoactual) + Number(monto);
     localStorage.setItem('saldo', resultado); 
 
-    document.getElementById('mensajeAlerta').innerHTML = `
-        <div class="alert alert-success text-center mx-auto" style="max-width:300px;">
+    $('#mensajeAlerta').hide().html( `
+        <div class="alert alert-success text-center mx-auto" style="max-width:300px; role="alert">
             ¡Listo! Nuevo saldo: $${resultado}
             ¡Has depositado $${monto} correctamente!
-        </div>`;
+        </div>`).fadeIn(300).delay(1500).fadeOut(300);
     
     document.getElementById('saldoVisual').innerText = resultado;
     
@@ -42,10 +39,11 @@ document.getElementById('botonDepositar').addEventListener('click', function(eve
 });
 
 document.getElementById('botonmenu').addEventListener('click', function() {
-    document.getElementById('mensajeNavegacion').innerHTML = `
-        <div class="alert alert-info text-center mx-auto" style="max-width:300px;">
+    $('#mensajeNavegacion').hide().html(`
+        <div class="alert alert-info text-center mx-auto mt-3" style="max-width:300px; role:"alert">
             Redirigiendo a la página menú...
-        </div>`;
+        </div>
+        `).fadeIn(300);
     setTimeout(function() {
         window.location.href = "menu.html";
     }, 2000);

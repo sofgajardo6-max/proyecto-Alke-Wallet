@@ -9,6 +9,38 @@
 </head>
 
 <body>
+  <nav id="navAlke" class="navbar navbar-expand-lg mb-4">
+  <div class="container-fluid ms-auto">
+    
+    <div class="d-flex align-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" id="iconoBanco" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16" width="40" height="40">
+        <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.5.5 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89zM3.777 3h8.447L8 1zM2 6v7h1V6zm2 0v7h2.5V6zm3.5 0v7h1V6zm2 0v7H12V6zM13 6v7h1V6zm2-1V4H1v1zm-.39 9H1.39l-.25 1h13.72z"></path>
+      </svg>
+      <h2 class="texto-blanco mb-0 ms-2" id="tituloAlke">Alke Wallet</h2>
+    </div>
+
+    <button id="botontoggler" class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#menuDesplegable" aria-controls="menuDesplegable" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menuDesplegable">
+      <ul class="navbar-nav ms-auto"> <li class="nav-item">
+          <a class="nav-link texto-blanco" id="botonmenus" href="menu.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link texto-blanco" id="botonmovimiento" href="./transactions.html">Movimientos</a>
+        </li>
+        <li class="nav-item ms-lg-3">
+       </li>
+      </ul>
+    </div>
+         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-person-circle d-flex " viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/></svg>
+
+
+  </div>
+</nav>
     <div class="container shadow-lg bg-body rounded mt-5">
         <h2>Enviar dinero</h2>
         <!-- el id es para actualizar el saldo y que sea igual en todas las paginas -->
@@ -19,6 +51,7 @@
             <div class="form-group">
     <div class="mb-3">
     <input type="text" id="buscadorContactos" class="form-control" placeholder="Buscar contacto por nombre">
+    <datalist id="Sugerencias"></datalist>
 </div>
        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalNuevoContacto">Agregar nuevo contacto</button>
         </div>
@@ -28,16 +61,6 @@
         
         <ul class="list-group border border-2" id="ListaDeContactos">
             <li class="list-group-item">
-                <div class="contact-info">
-                    <span class="contact-name">Juan Perez</span>
-                    <span class="contact-details">123123123, Alias: Juan.Perez, Banco: Banco de Chile</span>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="contact-info">
-                    <span class="contact-name">Maria Gonzalez</span>
-                    <span class="contact-details">129389212, Alias: Maria G., Banco: Banco Falabella</span>
-                </div>
             </li>
         </ul>
         </form>

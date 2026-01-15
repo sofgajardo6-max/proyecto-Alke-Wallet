@@ -15,23 +15,28 @@
 <form>
         <input type="number" class="form-control" min="0" id="montoDeposito" placeholder="Ingresa un monto">
 <!-- boton deposito -->
-    <button type="submit" id="botonDepositar" class="btn btn-primary mt-3">Depositar</button>
+    <button type="submit" id="botonDepositar" class="btn btn-primary mt-4">Depositar</button>
 </form>
 <!-- boton para menu -->
 <button id="botonmenu" class="btn btn-secondary mt-3">Volver al menú</button>
-</div>
+
 <!-- mensaje de cargando ir a menu -->
  <div class="row justify-content-center">
-    <div id="mensajeNavegacion" class="col-10 col-md-4 mt-3"></div>
+    <div id="mensajeNavegacion" class="col-10 col-md-4 mt-3 w-100"></div>
 </div>
 <!-- mensaje de deposito exitoso -->
  <div class="row justify-content-center">
-    <div id="mensajeDeposito" class="col-10 col-md-4 mt-3"></div>
+    <div id="mensajeDeposito" class="col-10 col-md-4 mt-3 w-100"></div>
 </div>
+<!-- boton para alerta de envio exitoso y dice el monto -->
 <div class="row justify-content-center">
-    <div id="mensajeAlerta" class="col-10 col-md-4 mt-3"></div>
+    <div id="mensajeAlerta" class="col-10 col-md-4 mt-3 w-100"></div>
 </div>
 
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="./assets/js/deposit.js"></script>
 
 </body>

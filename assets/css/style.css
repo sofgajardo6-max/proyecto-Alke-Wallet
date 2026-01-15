@@ -49,3 +49,9 @@
     background-color: rgb(105, 46, 199); /* O el color que quieras */
     transition: 0.3s;
 }
+@media (max-width: 576px) {
+    .container {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}

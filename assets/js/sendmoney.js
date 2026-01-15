@@ -5,16 +5,30 @@ $(document).ready(function() {
     /* el JSON.parse es para traer los datos de contactos que ya estan anotados el ||[] es por si no hay ninguno se quede en blanco y no de error :) */
     let listaContactos = JSON.parse(localStorage.getItem('misContactos')) || [];
 
+/*esto hace que si en el localstorage no hay una lista predeterminada se hace una
+ AL CREAR UN CONTACTO NUEVO ESTA LISTA SE BORRA, ES SOLO PARA TENER UNA PREDETERMINADA*/
+
+if (listaContactos.length === 0) {
+    listaContactos = [
+        { nombre: "Juan Pérez", alias: "juanito", cbu: "0000111", banco: "Alke Banco" },
+        { nombre: "Beatriz Soto", alias: "Bea", cbu: "0000222", banco: "Estado" },
+        { nombre: "Carlos Muñoz", alias: "Carlitos", cbu: "0000333", banco: "Santander" }
+    ];
+    localStorage.setItem('misContactos', JSON.stringify(listaContactos))
+}
+
+
     $('#buscadorContactos').on('keyup', function() {
 
         let valorBusqueda = $(this).val().toLowerCase();
 
-        // BUSCAMOS EN CADA ELEMENTO <li> 
+        // BUSCAMOS EN CADA ELEMENTO <li> BASADO EN ALIAS POR CADA PRIMERA LETRA DEL ALIAS Y NO CONFUNDA CON NOMBRES Q CONTIENEN ESA MISMA LETRA
         $('#ListaDeContactos li').filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(valorBusqueda) > -1);
+            let alias = $(this).find('p').first().text().toLowerCase();
+            $(this).toggle(alias.startsWith(valorBusqueda));
             
         });
-
+    
 });
 
     // json.parse desempaqueta los datos que hay en el local storage por decirlo asi
@@ -39,6 +53,7 @@ $(document).ready(function() {
     }
     mostrarContactos();
 
+    //modal para poder enviar el monto
     let contactoSeleccionado = "";
     window.seleccionarContacto = function(nombre) { 
         contactoSeleccionado = nombre;
@@ -52,6 +67,7 @@ $(document).ready(function() {
         let monto = Number($('#montoTransferir').val());
         let saldoActual = Number(localStorage.getItem('saldo')) || 100000;
 
+        //este if es por si se ingresa a enviar dinero un monto menor a 0 o una letra en vez de un numero
         if (monto <= 0 || isNaN(monto)) {
             mostrarErrorTransferencia("Por favor, ingresa un monto válido.");
             return;
@@ -65,7 +81,7 @@ $(document).ready(function() {
         let nuevoSaldo = saldoActual - monto;
         localStorage.setItem('saldo', nuevoSaldo);
 
-        // historial de movimientos
+        // historial de movimientos con fecha y hora para poder verlo en movimientos
         const nuevoMovimiento = {
             destinatario: contactoSeleccionado,
             monto: monto,
@@ -85,9 +101,13 @@ $(document).ready(function() {
         }, 2000);
     });
 
+if (listaContactos.length > 0 && listaContactos[0].nombre === "Juan Pérez") {
+        listaContactos = []; 
+    }
     $('#formNuevoContacto').submit(function(event) {
         event.preventDefault();
-//validacion para que no se guarden contactos vacios
+
+//validacion para que no se guarden contactos vacios y sea obligatorio llenar todos los cuadraditos
         const nombre = $('#nombreContacto').val();
         const cbu = $('#cbuContacto').val();
         const alias = $('#aliasContacto').val();

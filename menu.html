@@ -11,7 +11,7 @@
     <!-- NAVBAR con el logo y todo de forma responsive -->
 
 <nav id="navAlke" class="navbar navbar-expand-lg mb-4">
-  <div class="container-fluid">
+  <div class="container-fluid ms-auto">
     
     <div class="d-flex align-items-center">
       <svg xmlns="http://www.w3.org/2000/svg" id="iconoBanco" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16" width="40" height="40">
@@ -20,7 +20,7 @@
       <h2 class="texto-blanco mb-0 ms-2" id="tituloAlke">Alke Wallet</h2>
     </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuDesplegable" aria-controls="menuDesplegable" aria-expanded="false" aria-label="Toggle navigation">
+    <button id="botontoggler" class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#menuDesplegable" aria-controls="menuDesplegable" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -32,12 +32,13 @@
           <a class="nav-link texto-blanco" id="botonmovimiento" href="./transactions.html">Movimientos</a>
         </li>
         <li class="nav-item ms-lg-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/></svg>
-        </li>
+       </li>
       </ul>
     </div>
+         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-person-circle d-flex " viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/></svg>
+
 
   </div>
 </nav>
@@ -48,9 +49,9 @@
         <label for="balance">Balance:</label>
         <h3 id="balance">$<span id="saldoVisual"></span></h3>
         </div>
-        <button id="btnDeposit" class="btn btn-success mt-3">Depositar Dinero</button>
-        <button id="btnEnviar" class="btn btn-secondary mt-3">Enviar Dinero</button>
-        <button id="btnMovimientos" class="btn btn-primary mt-3">Últimos Movimientos</button>
+        <button id="btnDeposit" class="btn btn-success mt-3 me-3">Depositar Dinero</button>
+        <button id="btnEnviar" class="btn btn-secondary mt-3">Enviar Dinero</button> 
+        <button id="btnMovimientos" class="btn btn-primary mt-4">Últimos Movimientos</button>
         
         <div class="row justify-content-center">
     <div id="mensajeNavegacion" class="col-10 col-md-4 mt-3 w-100"></div>
