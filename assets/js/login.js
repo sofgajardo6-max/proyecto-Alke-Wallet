@@ -18,14 +18,14 @@ $(document).ready(function() {
         `);
         setTimeout(function() {
             window.location.href = "menu.html";
-        }, 1000);
+        }, 1500);
 
-    } else { 
-        $(`#mensajeAlerta`).html(`
+} else { 
+        $('#mensajeAlerta').hide().html(`
             <div class="alert alert-danger" role="alert">
-                Error: correo electrónico o contraseña incorrectos.
+                Error: Correo electrónico o contraseña incorrectos.
             </div>
-        `);
+        `).fadeIn(300).delay(1500).fadeOut(500);
     }
 });
 });
